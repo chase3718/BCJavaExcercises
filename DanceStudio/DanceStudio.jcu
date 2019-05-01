@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace_user>
+	<active_project>
+		<label>DanceStudio</label>
+	</active_project>
+	<projects>
+		<project>
+			<label>DanceStudio</label>
+			<showfiles>false</showfiles>
+			<fileitem>
+				<path>CoordinateSystem.java</path>
+				<collapsedfolds>4;0</collapsedfolds>
+			</fileitem>
+			<fileitem>
+				<path>DanceStudio.java</path>
+				<collapsedfolds>2;0</collapsedfolds>
+			</fileitem>
+			<fileitem>
+				<path>Foot.java</path>
+				<collapsedfolds>5;2</collapsedfolds>
+			</fileitem>
+		</project>
+	</projects>
+	<open_files>
+		<docitem>
+			<path>CoordinateSystem.java</path>
+			<source>true</source>
+			<index>0</index>
+			<active>false</active>
+		</docitem>
+		<docitem>
+			<path>Foot.java</path>
+			<source>true</source>
+			<index>1</index>
+			<active>false</active>
+		</docitem>
+		<docitem>
+			<path>FootTest.java</path>
+			<source>true</source>
+			<index>2</index>
+			<active>true</active>
+		</docitem>
+		<docitem>
+			<path>DanceStudio.java</path>
+			<source>true</source>
+			<index>3</index>
+			<active>false</active>
+		</docitem>
+	</open_files>
+</workspace_user>

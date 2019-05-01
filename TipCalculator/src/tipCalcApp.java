@@ -22,8 +22,8 @@ public class tipCalcApp {
 				
 				BigDecimal per = new BigDecimal(i/100).setScale(2, RoundingMode.HALF_UP);
 				
-				System.out.println("Tip amount:      " + cost.multiply(per).setScale(2, RoundingMode.HALF_UP));
-				System.out.println("Total Amount:    " + cost.add(cost.multiply(per)).setScale(2, RoundingMode.HALF_UP) + "\n");
+				System.out.println("Tip amount:      $" + cost.multiply(per).setScale(2, RoundingMode.HALF_UP));
+				System.out.println("Total Amount:    $" + cost.add(cost.multiply(per)).setScale(2, RoundingMode.HALF_UP) + "\n");
 			}
 			
 			System.out.print("Continue? (y/n) ");

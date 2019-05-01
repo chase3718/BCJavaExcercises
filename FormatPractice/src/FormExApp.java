@@ -6,12 +6,12 @@ public class FormExApp {
 	public static void main(String[] args) {
 		//System.out.printf("My name is: %s%n", "joe");
 		
-/*		
+		
   		StringBuilder sbuf = new StringBuilder();
 		Formatter fmt = new Formatter(sbuf);
 		fmt.format("PI = %f%n", Math.PI);
 		System.out.print(sbuf.toString());
-*/
+
 
 /*
 		System.out.printf("%2$s", 32, "Hello"); // prints: "Hello"
@@ -94,10 +94,10 @@ public class FormExApp {
 		
 		System.out.printf("%30.5s %030d", "Hello World", 42);
 */
+/*
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter an Integer: ");
 		long num = sc.nextLong();
-		
 		System.out.printf("%-15s%-15s%-15s\n", "Number", "Squared", "Cubed");
 		System.out.printf("%-15s%-15s%-15s\n", "======", "=======", "=====");
 		for(long i = 1; i <= num; i++) {
@@ -105,6 +105,7 @@ public class FormExApp {
 		}
 		
 		sc.close();
+*/
 	}
 
 }

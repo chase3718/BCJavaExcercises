@@ -1,0 +1,11 @@
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\Band.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\Bystander.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\CoordinateSystem.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\FirstSteps.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\Foot.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\FootTest.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\Pacer.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\PacerTest.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\PacingGroup.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\Walker.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FirstSteps\WalkingGroup.java

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>Craps</label>
+		<id>142</id>
+		<version>0</version>
+	</settings>
+	<users>
+		<user>
+			<path>Craps.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>Craps.jcp</path>
+		</project>
+		<project>
+			<path>CrapsTest\CrapsTest.jcp</path>
+		</project>
+		<project>
+			<path>crapsStats\crapsStats.jcp</path>
+		</project>
+	</projects>
+</workspace>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>FirstSteps</label>
+		<id>503</id>
+		<version>0</version>
+	</settings>
+	<users>
+		<user>
+			<path>FirstSteps.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>FirstSteps.jcp</path>
+		</project>
+	</projects>
+</workspace>

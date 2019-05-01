@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+	<settings>
+		<label>FirstSteps</label>
+		<root_path>\</root_path>
+		<output_path>\</output_path>
+		<source_path>\</source_path>
+		<jdkprofile_ref>JDK version 1.6.0_03</jdkprofile_ref>
+		<compiler_ref/>
+		<ant_ref/>
+	</settings>
+	<ant_events/>
+	<run_items>
+		<item run="FirstSteps"/>
+		<item run="FootTest"/>
+		<item run="Pacer"/>
+		<item run="PacerTest"/>
+	</run_items>
+	<runtimes>
+		<runtime>
+			<label>&lt;Default&gt;</label>
+			<application_ref/>
+			<applet_ref/>
+			<debugger_ref/>
+			<param/>
+			<run>FirstSteps</run>
+			<verify>true</verify>
+		</runtime>
+		<runtime>
+			<label>Main</label>
+			<application_ref>&lt;Default&gt;</application_ref>
+			<applet_ref>&lt;Default&gt;</applet_ref>
+			<debugger_ref>&lt;Default&gt;</debugger_ref>
+			<param/>
+			<run>FirstSteps</run>
+			<verify>true</verify>
+		</runtime>
+		<runtime>
+			<label>FT</label>
+			<application_ref>&lt;Default&gt;</application_ref>
+			<applet_ref>&lt;Default&gt;</applet_ref>
+			<debugger_ref>&lt;Default&gt;</debugger_ref>
+			<param/>
+			<run>FootTest</run>
+			<verify>true</verify>
+		</runtime>
+		<runtime>
+			<label>P</label>
+			<application_ref>&lt;Default&gt;</application_ref>
+			<applet_ref>&lt;Default&gt;</applet_ref>
+			<debugger_ref>&lt;Default&gt;</debugger_ref>
+			<param/>
+			<run>PacerTest</run>
+			<verify>true</verify>
+		</runtime>
+	</runtimes>
+	<libraries/>
+	<files>
+		<include>
+			<fileitem>
+				<path>Band.java</path>
+			</fileitem>
+			<fileitem>
+				<path>Bystander.java</path>
+			</fileitem>
+			<fileitem>
+				<path>CoordinateSystem.java</path>
+			</fileitem>
+			<fileitem>
+				<path>DanceStudio.jar</path>
+			</fileitem>
+			<fileitem>
+				<path>FirstSteps.java</path>
+			</fileitem>
+			<fileitem>
+				<path>Foot.java</path>
+			</fileitem>
+			<fileitem>
+				<path>FootTest.java</path>
+			</fileitem>
+			<fileitem>
+				<path>Pacer.java</path>
+			</fileitem>
+			<fileitem>
+				<path>PacerTest.java</path>
+			</fileitem>
+			<fileitem>
+				<path>PacingGroup.java</path>
+			</fileitem>
+			<fileitem>
+				<path>Walker.java</path>
+			</fileitem>
+			<fileitem>
+				<path>WalkingGroup.java</path>
+			</fileitem>
+		</include>
+	</files>
+	<tasks/>
+</project>

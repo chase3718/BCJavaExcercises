@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+	<settings>
+		<label>DanceStudio</label>
+		<root_path>\</root_path>
+		<output_path>\</output_path>
+		<source_path>\</source_path>
+		<jdkprofile_ref>JDK version 1.6.0_03</jdkprofile_ref>
+		<compiler_ref>&lt;Default&gt;</compiler_ref>
+		<ant_ref/>
+	</settings>
+	<ant_events/>
+	<run_items>
+		<item run="DanceStudio"/>
+		<item run="FootTest"/>
+	</run_items>
+	<runtimes>
+		<runtime>
+			<label>&lt;Default&gt;</label>
+			<application_ref>&lt;Default&gt;</application_ref>
+			<applet_ref>&lt;Default&gt;</applet_ref>
+			<debugger_ref>&lt;Default&gt;</debugger_ref>
+			<param/>
+			<run>DanceStudio</run>
+			<verify>true</verify>
+		</runtime>
+		<runtime>
+			<label>FootTest</label>
+			<application_ref>&lt;Default&gt;</application_ref>
+			<applet_ref>&lt;Default&gt;</applet_ref>
+			<debugger_ref>&lt;Default&gt;</debugger_ref>
+			<param/>
+			<run>FootTest</run>
+			<verify>true</verify>
+		</runtime>
+	</runtimes>
+	<libraries>
+		<library_ref>DanceStudioJar</library_ref>
+	</libraries>
+	<files>
+		<include>
+			<fileitem>
+				<path>Band.java</path>
+			</fileitem>
+			<fileitem>
+				<path>CoordinateSystem.java</path>
+			</fileitem>
+			<fileitem>
+				<path>DanceStudio.java</path>
+			</fileitem>
+			<fileitem>
+				<path>Foot.java</path>
+			</fileitem>
+			<fileitem>
+				<path>FootTest.java</path>
+			</fileitem>
+		</include>
+		<exclude>
+			<fileitem>
+				<path>DanceStudio.jar</path>
+			</fileitem>
+			<fileitem>
+				<path>FirstSteps.java</path>
+			</fileitem>
+			<fileitem>
+				<path>Pacer.java</path>
+			</fileitem>
+			<fileitem>
+				<path>PacingGroup.java</path>
+			</fileitem>
+			<fileitem>
+				<path>Walker.java</path>
+			</fileitem>
+			<fileitem>
+				<path>WalkingGroup.java</path>
+			</fileitem>
+		</exclude>
+	</files>
+	<tasks/>
+</project>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+	<settings>
+		<label>Craps</label>
+		<root_path>\</root_path>
+		<output_path>\</output_path>
+		<source_path>\</source_path>
+		<jdkprofile_ref>JDK version 1.6.0_03</jdkprofile_ref>
+		<compiler_ref/>
+		<ant_ref/>
+	</settings>
+	<ant_events/>
+	<run_items>
+		<item run="Craps"/>
+		<item run="CrapsStats"/>
+		<item run="CrapsTest1"/>
+		<item run="Die"/>
+	</run_items>
+	<runtimes>
+		<runtime>
+			<label>&lt;Default&gt;</label>
+			<application_ref/>
+			<applet_ref/>
+			<debugger_ref/>
+			<param/>
+			<run>Craps</run>
+			<verify>true</verify>
+		</runtime>
+		<runtime>
+			<label>CrapsTest</label>
+			<application_ref>&lt;Default&gt;</application_ref>
+			<applet_ref>&lt;Default&gt;</applet_ref>
+			<debugger_ref>&lt;Default&gt;</debugger_ref>
+			<param/>
+			<run>CrapsTest1</run>
+			<verify>true</verify>
+		</runtime>
+		<runtime>
+			<label>Die</label>
+			<application_ref>&lt;Default&gt;</application_ref>
+			<applet_ref>&lt;Default&gt;</applet_ref>
+			<debugger_ref>&lt;Default&gt;</debugger_ref>
+			<param/>
+			<run>Die</run>
+			<verify>true</verify>
+		</runtime>
+	</runtimes>
+	<libraries/>
+	<files>
+		<include>
+			<folderitem>
+				<path>source</path>
+			</folderitem>
+			<fileitem>
+				<path>Craps.jar</path>
+			</fileitem>
+			<fileitem>
+				<path>Craps.java</path>
+			</fileitem>
+			<fileitem>
+				<path>CrapsGame.java</path>
+			</fileitem>
+			<fileitem>
+				<path>CrapsStats.java</path>
+			</fileitem>
+			<fileitem>
+				<path>CrapsTest1.java</path>
+			</fileitem>
+			<fileitem>
+				<path>Die.java</path>
+			</fileitem>
+			<fileitem>
+				<path>RollingDie.java</path>
+			</fileitem>
+			<fileitem>
+				<path>source\ControlPanel.java</path>
+				<folder>source</folder>
+			</fileitem>
+			<fileitem>
+				<path>source\CrapsTable.java</path>
+				<folder>source</folder>
+			</fileitem>
+			<fileitem>
+				<path>source\DisplayPanel.java</path>
+				<folder>source</folder>
+			</fileitem>
+		</include>
+		<exclude>
+			<fileitem>
+				<path>source\Craps.java</path>
+			</fileitem>
+			<fileitem>
+				<path>source\Die.java</path>
+			</fileitem>
+		</exclude>
+	</files>
+	<tasks/>
+</project>

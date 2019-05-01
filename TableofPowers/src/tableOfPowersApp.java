@@ -4,8 +4,6 @@ import java.math.*;
 public class tableOfPowersApp {
 	public static void main (String[] args) {
 		System.out.println("Welcome to the table of powers app.\n");
-		
-		/** Make sure to import java.util.scanner. Must have a Scanner called sc.**/
 
 		Scanner sc = new Scanner(System.in);
 		boolean run = true;

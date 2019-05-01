@@ -1,0 +1,5 @@
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\Band.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\CoordinateSystem.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\DanceStudio.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\Foot.java
+\\fs01\STUDENTS\HS\williams.chase\PROGRAMING\AP_COM_SCI\DanceStudio\FootTest.java
