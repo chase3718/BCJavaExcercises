@@ -1,3 +1,4 @@
+package ui;
 
 import java.util.Scanner;
 
@@ -7,8 +8,7 @@ public class Console {
 
 	public String getString(String prompt) {
 		System.out.print(prompt);
-		String s = sc.next();
-		sc.nextLine();
+		String s = sc.nextLine();
 		return s;
 	}
 
@@ -76,8 +76,12 @@ public class Console {
 		return d;
 	}
 
-	public String getStringOptions(String prompt, String option1, String option2, boolean ignoreCase) {
+	public String getString(String prompt, boolean ignoreCase, String... options) {
 		String s = "";
+		String optArr = "";
+		for (int i = 0; i < options.length; i++) {
+			optArr += " " + options[i];
+		}
 		boolean isValid = false;
 		while (!isValid) {
 			System.out.print(prompt);
@@ -85,23 +89,32 @@ public class Console {
 			if (s.length() < 1) {
 				System.out.println("Error! This entry is required. Try again.");
 			} else {
-				if (ignoreCase) {
-					if (!s.equalsIgnoreCase(option1) && !s.equalsIgnoreCase(option2)) {
-						System.out.println("Error! Must either be " + option1 + " or " + option2 + ".");
+				for (int i = 0; i < options.length; i++) {
+					if (ignoreCase) {
+						if (s.equalsIgnoreCase(options[i])) {
+							isValid = true;
+							break;
+						}
 					} else {
-						isValid = true;
+						if (s.equals(options[i])) {
+							isValid = true;
+							break;
+						}
 					}
-				} else {
-					if (!s.equals(option1) && !s.equals(option2)) {
-						System.out
-								.println("Error! Must either be " + option1 + " or " + option2 + ". (Case Sensitive)");
+				}
+				if (!isValid) {
+					if (ignoreCase) {
+						System.out.println("Error! Options are:" + optArr + ". Try Again");
 					} else {
-						isValid = true;
+						System.out.println("Error! Options are:" + optArr + ". Try Again (Case Sensitive)");
 					}
 				}
 			}
-			// sc.nextLine();
 		}
-		return s;
+		if (ignoreCase) {
+			return s.toUpperCase();
+		} else {
+			return s;
+		}
 	}
 }

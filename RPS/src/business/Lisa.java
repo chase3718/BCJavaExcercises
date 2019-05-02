@@ -1,7 +1,7 @@
+package business;
 
 public class Lisa extends Player {
 	public Lisa() {
-
 		super("Lisa", generateRoshambo(getRandomChoice()));
 	}
 

@@ -1,5 +1,7 @@
+package business;
 
 public abstract class Player {
+
 	private String name;
 	private Roshambo player;
 
@@ -18,12 +20,12 @@ public abstract class Player {
 	}
 
 	public static Roshambo generateRoshambo(String s) {
-		Roshambo p = Roshambo.ROCK;
+		Roshambo p;
 		if (s.equalsIgnoreCase("r")) {
 			p = Roshambo.ROCK;
 		} else if (s.equalsIgnoreCase("p")) {
 			p = Roshambo.PAPER;
-		} else if (s.equalsIgnoreCase("s")) {
+		} else {
 			p = Roshambo.SCISSORS;
 		}
 
@@ -34,6 +36,10 @@ public abstract class Player {
 		return name;
 	}
 
+	public String getNameUpper() {
+		return name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -41,20 +47,18 @@ public abstract class Player {
 	public Roshambo getPlayer() {
 		return player;
 	}
-	
+
 	public String getPlayerString() {
-		String p = player.toString();
-		return p;
+		return player.toString();
 	}
-	
+
 	public void setPlayer(Roshambo player) {
 		this.player = player;
 	}
 
 	@Override
 	public String toString() {
-		return getName().substring(0,1).toUpperCase() + getName().substring(1).toLowerCase() + ": " 
-			 + getPlayerString();
+		return getNameUpper() + ": " + getPlayerString();
 	}
 
 }
