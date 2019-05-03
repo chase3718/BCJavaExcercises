@@ -2,10 +2,8 @@ package business;
 
 import java.text.NumberFormat;
 
-import ui.Console;
-
 public class Calculation {
-	public static Console in = new Console();
+	
 	private String calc;
 	private String[] calcArr;
 
@@ -15,10 +13,9 @@ public class Calculation {
 
 	public static String getStringCheckForErrors(String prompt) {
 		boolean isValid = false;
-		String str = "";
+		String str = prompt;
 		while (!isValid) {
 			boolean doEr = true;
-			str = in.getString(prompt);
 			str = str.trim();
 			int numOfSpaces = 0;
 			String prev = "";

@@ -11,8 +11,7 @@ public class CalculatorApp {
 
 		do {
 
-			Calculation calc = new Calculation(Calculation.getStringCheckForErrors(
-					"Enter a function separated by spaces.\n\nPermitted Operators (+,-,*,/,%)\n\nEnter: "));
+			Calculation calc = new Calculation(Calculation.getStringCheckForErrors(in.getString("Enter a function separated by spaces.\n\nPermitted Operators (+,-,*,/,%)\n\nEnter: ")));
 
 			calc.splitIntoParts();
 
