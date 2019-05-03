@@ -1,7 +1,9 @@
 package business;
 
 public enum Roshambo {
-	ROCK, PAPER, SCISSORS;
+	ROCK, 
+	PAPER, 
+	SCISSORS;
 
 	@Override
 	public String toString() {

@@ -3,20 +3,21 @@ package business;
 public abstract class Player {
 
 	private String name;
-	private Roshambo player;
+	private Roshambo hand;
 
 	public Player() {
 		this.name = "";
-		this.player = null;
+		this.hand = null;
 	}
 
 	public Player(String name) {
 		this.name = name;
+		this.hand = null;
 	}
 
 	public Player(String name, Roshambo c) {
 		this.name = name;
-		this.player = c;
+		this.hand = c;
 	}
 
 	public static Roshambo generateRoshambo(String s) {
@@ -44,21 +45,21 @@ public abstract class Player {
 		this.name = name;
 	}
 
-	public Roshambo getPlayer() {
-		return player;
+	public Roshambo getHand() {
+		return hand;
 	}
 
-	public String getPlayerString() {
-		return player.toString();
+	public String getHandString() {
+		return hand.toString();
 	}
 
-	public void setPlayer(Roshambo player) {
-		this.player = player;
+	public void setHand(Roshambo player) {
+		this.hand = player;
 	}
 
 	@Override
 	public String toString() {
-		return getNameUpper() + ": " + getPlayerString();
+		return getNameUpper() + ": " + getHandString();
 	}
 
 }

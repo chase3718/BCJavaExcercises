@@ -4,13 +4,34 @@ import java.util.Scanner;
 
 public class Console {
 
-	private static Scanner sc = new Scanner(System.in);
+	private Scanner sc = new Scanner(System.in);
 
 	public String getString(String prompt) {
 		System.out.print(prompt);
-		String s = sc.next();
-		sc.nextLine();
-		return s;
+		String str = sc.nextLine();
+		return str;
+	}
+
+	public String getString(String prompt, boolean doReq) {
+		boolean isValid = false;
+		String str = "";
+		boolean hasData = false;
+		while (!isValid) {
+			System.out.print(prompt);
+			str = sc.nextLine();
+			for (int i = 0; i < str.length(); i++) {
+				if (str.charAt(i) != 32) {
+					hasData = true;
+					break;
+				}
+			}
+			if (doReq && !hasData) {
+				System.out.println("Error. You must enter data.");
+			} else {
+				isValid = true;
+			}
+		}
+		return str;
 	}
 
 	public int getInt(String prompt) {
@@ -77,7 +98,7 @@ public class Console {
 		return d;
 	}
 
-	public String getStringOptions(String prompt, boolean ignoreCase, String... options) {
+	public String getString(String prompt, boolean ignoreCase, String... options) {
 		String s = "";
 		String optArr = "";
 		for (int i = 0; i < options.length; i++) {

@@ -19,6 +19,7 @@ public class Calculation {
 		while (!isValid) {
 			boolean doEr = true;
 			str = in.getString(prompt);
+			str = str.trim();
 			int numOfSpaces = 0;
 			String prev = "";
 			str += " ";
@@ -105,7 +106,8 @@ public class Calculation {
 	}
 
 	public void splitIntoParts() {
-		int numOfSpaces = 1;
+		/*
+		 * int numOfSpaces = 1;
 		for (int i = 0; i < this.calc.length() - 1; i++) {
 			if (this.calc.substring(i, i + 1).equals(" "))
 				numOfSpaces++;
@@ -126,7 +128,9 @@ public class Calculation {
 				split[index] += this.calc.substring(i, i + 1);
 			}
 		}
-		calcArr = split;
+		calcArr = split; 
+		*/
+		calcArr = calc.split(" ");
 	}
 
 	public static String arrayToString(String[] str) {

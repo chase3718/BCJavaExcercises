@@ -7,6 +7,6 @@ public class Player1 extends Player {
 	private static Console in = new Console();
 
 	public Player1() {
-		super(in.getString("Enter your name: "));
+		super(in.getString("Enter your name: ", true));
 	}
 }

@@ -86,6 +86,7 @@ public class Console {
 		while (!isValid) {
 			System.out.print(prompt);
 			s = sc.nextLine();
+			s = s.trim();
 			if (s.length() < 1) {
 				System.out.println("Error! This entry is required. Try again.");
 			} else {

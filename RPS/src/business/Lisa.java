@@ -5,7 +5,7 @@ public class Lisa extends Player {
 		super("Lisa", generateRoshambo(getRandomChoice()));
 	}
 
-	public static String getRandomChoice() {
+	private static String getRandomChoice() {
 		int l = (int) (Math.random() * 3);
 		String c = "";
 		if (l == 0) {
