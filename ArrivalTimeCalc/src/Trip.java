@@ -32,7 +32,7 @@ public class Trip {
 	public void setTimeOfArrival() {
 		int hour = time.getHour() + getHoursSpent();
 		int minute = time.getMinute() + getMinutesSpent();
-		if (minute > 60) {
+		if (minute >= 60) {
 			hour ++;
 			minute -= 60;
 		}
@@ -112,11 +112,11 @@ public class Trip {
 	
 	@Override
 	public String toString() {
-		String str = ("Estimated travel time\n") 
-				   + ("Hours: " + getHoursSpent())
-				   + ("Minutes: " + getMinutesSpent()) 
-				   + ("Estimated date of arrival: " + getDateOfArrivalFormatted())
-				   + ("Estimated time of arrival: " + getTimeOfArrivalFormatted());
+		String str = ("Estimated travel time") 
+				   + ("\nHours: " + getHoursSpent())
+				   + ("\nMinutes: " + getMinutesSpent()) 
+				   + ("\nEstimated date of arrival: " + getDateOfArrivalFormatted())
+				   + ("\nEstimated time of arrival: " + getTimeOfArrivalFormatted());
 		
 		return str;
 	}
