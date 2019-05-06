@@ -11,12 +11,15 @@ public class CalculatorApp {
 
 		do {
 
-			Calculation calc = new Calculation(Calculation.getStringCheckForErrors(in.getString("\nEnter a function separated by spaces.\n\nPermitted Operators (+,-,*,/,%)\n\nEnter: ")));
+			Calculation calc = new Calculation(Calculation.getStringCheckForErrors(in.getString(
+					"\nEnter a function separated by spaces.\n\nPermitted Operators (+,-,*,/,%)\n\nEnter: ")));
 
-			calc.splitIntoParts();
-
-			System.out.println(calc.doCalculation());
-
+			if (!calc.getCalc().equalsIgnoreCase("INVALID")) {
+				calc.splitIntoParts();
+				System.out.println(calc.doCalculation());
+			} else {
+				System.out.println("Invalid input.");
+			}
 		} while (in.getString("\nContinue? (y/n) ", true, "y", "n").equalsIgnoreCase("y"));
 
 		System.out.println("\nBye");

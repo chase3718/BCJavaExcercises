@@ -11,6 +11,9 @@ public class Calculation {
 		calc = str;
 	}
 
+	public String getCalc() {
+		return calc;
+	}
 	public static String getStringCheckForErrors(String prompt) {
 		boolean isValid = false;
 		String str = prompt;
@@ -26,7 +29,7 @@ public class Calculation {
 						doEr = false;
 						System.out.println("\nError. Use only one space to separate.");
 						numOfSpaces = 0;
-						break;
+						return "INVALID";
 					}
 					numOfSpaces++;
 
@@ -36,22 +39,25 @@ public class Calculation {
 					System.out.println("\nError. Do not use unnecessary characters.");
 					doEr = false;
 					numOfSpaces = 0;
-					break;
+					return "INVALID";
 				}
 				if (a != 32 && a != 37 && a != 42 && a != 43 && a != 45 && a != 46 && a != 47 && a < 48 || a > 57) {
 					System.out.println("\nError. Alphabetic/Non-Numeric variables not allowed");
 					doEr = false;
 					numOfSpaces = 0;
-					break;
+					return "INVALID";
 				}
 				prev = str.substring(i, i + 1);
 			}
 			if (numOfSpaces == 2) {
 				isValid = true;
 			} else if (numOfSpaces > 2 && doEr) {
-				System.out.println("\nError. Only one operation available. Do not enter any unnecessary spaces.");
+				System.out.println("\nError. Only one operation available. Do not enter any unnecessary spaces."
+						+ "\nOnly evaluating first function.");
+				break;
 			} else if (doEr) {
 				System.out.println("\nError. You must separate the function with spaces.");
+				return "INVALID";
 			}
 		}
 		return str;

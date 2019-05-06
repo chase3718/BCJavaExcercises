@@ -49,11 +49,11 @@ public class StuffyDispenserApp {
 		 */
 		// Loop until user wants to quit
 
-		String choice = in.getString("Would you like to search, add stuffies, or exit? (search, add, exit) ", true,
-				"search", "add", "exit");
-		while (!choice.equalsIgnoreCase("exit")) {
+		String choice = in.getString("Would you like to search, add stuffies, or exit? (search/s, add/a, exit/e) ", true,
+				"search", "add", "exit", "s", "a", "e");
+		while (!choice.equalsIgnoreCase("exit") && !choice.equalsIgnoreCase("e")) {
 
-			if (choice.equalsIgnoreCase("search")) {
+			if (choice.equalsIgnoreCase("search") || choice.equalsIgnoreCase("s")) {
 				// Inside loop
 				// 1) Prompt for user input ("Pick a stuffy")
 				// int selectionNbr = in.getInt("Pick a stuffy by number (1-10): ", 0, 11);
@@ -76,7 +76,7 @@ public class StuffyDispenserApp {
 				}
 
 				System.out.println("Congratulations, you have a " + selectedStuffy.getSize() + ", "
-						+ selectedStuffy.getColor() + " " + selectedStuffy.getType() + "stuffy!");
+						+ selectedStuffy.getColor() + " " + selectedStuffy.getType() + " stuffy!");
 
 			} else {
 				int id = in.getInt("Stuffy ID: ");
