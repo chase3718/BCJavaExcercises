@@ -101,10 +101,13 @@ public class Calculation {
 		return "\n" + number.format(nums[0]) + " " + opps[0] + " " + number.format(nums[1]) + " = "
 				+ number.format(calc);
 	}
-
+	
+	/**
+	 * This method was written before learning about the split function. However, I still prefer my method 
+	 * because it checks for errors. But I really would have liked to use the split function.
+	 */
 	public void splitIntoParts() {
-		/*
-		 * int numOfSpaces = 1;
+		int numOfSpaces = 1;
 		for (int i = 0; i < this.calc.length() - 1; i++) {
 			if (this.calc.substring(i, i + 1).equals(" "))
 				numOfSpaces++;
@@ -126,8 +129,8 @@ public class Calculation {
 			}
 		}
 		calcArr = split; 
-		*/
-		calcArr = calc.split(" ");
+		
+		//calcArr = calc.split(" ");
 	}
 
 	public static String arrayToString(String[] str) {

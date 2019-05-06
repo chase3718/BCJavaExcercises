@@ -9,7 +9,10 @@ public class Console {
 		String str = sc.nextLine();
 		return str;
 	}
-
+	/**
+	 * Requires the user to input a string of length > 0.
+	 * Returns the entered string.
+	 */
 	public String getString(String prompt, boolean doReq) {
 		boolean isValid = false;
 		String str = "";
