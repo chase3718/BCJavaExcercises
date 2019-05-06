@@ -10,10 +10,12 @@ public class CalculatorApp {
 		Console in = new Console();
 
 		do {
+			Calculation calc;
 
-			Calculation calc = new Calculation(Calculation.getStringCheckForErrors(in.getString(
-					"\nEnter a function separated by spaces.\n\nPermitted Operators (+,-,*,/,%)\n\nEnter: ")));
-
+			do {
+				calc = new Calculation(Calculation.getStringCheckForErrors(in.getString(
+						"\nEnter a function separated by spaces.\n\nPermitted Operators (+,-,*,/,%)\n\nEnter: ")));
+			} while (calc.getCalc().equalsIgnoreCase("INVALID"));
 			if (!calc.getCalc().equalsIgnoreCase("INVALID")) {
 				calc.splitIntoParts();
 				System.out.println(calc.doCalculation());
