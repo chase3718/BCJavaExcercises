@@ -4,7 +4,7 @@ import java.text.NumberFormat;
 
 public class Calculation {
 	
-	private String calc = "INVALID";
+	private String calc;
 	private String[] calcArr;
 
 	public Calculation(String str) {
