@@ -15,6 +15,11 @@ public class RotateLeftApp {
 			list[i] = (int)(Double.parseDouble(input[i]));
 		}
 		System.out.println(toString(rotateLeft(list)));
+		String a = "strimg";
+		String b = "strimg";
+		if (a == b) {
+			System.out.println("=");
+		}
 	}
 	
 	public static Integer[] rotateLeft(Integer[] in) {
