@@ -53,7 +53,7 @@ public class ProductTextFile implements DAO<Product> {
 	@Override
 	public Product get(String code) {
 		for (Product p : products) {
-			if (p.getCode().equals(code)) {
+			if (p.getCode().equalsIgnoreCase(code)) {
 				return p;
 			}
 		}
@@ -62,7 +62,7 @@ public class ProductTextFile implements DAO<Product> {
 
 	private boolean saveAll() {
 		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(productsFile)))) {
-			for (Product p : products) {
+			for (Product p: products) {
 				out.print(p.getCode() + FIELD_SEP);
 				out.print(p.getDescription() + FIELD_SEP);
 				out.println(p.getPrice());
@@ -92,9 +92,9 @@ public class ProductTextFile implements DAO<Product> {
 		Product oldProduct = this.get(t.getCode());
 		int i = products.indexOf(oldProduct);
 		products.remove(i);
-		
+
 		products.add(i, t);
-		
+
 		return this.saveAll();
 	}
 

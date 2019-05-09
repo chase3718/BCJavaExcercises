@@ -6,13 +6,33 @@ public class Console {
 
 	private static Scanner sc = new Scanner(System.in);
 
-	public String getString(String prompt) {
+	public static String getString(String prompt) {
 		System.out.print(prompt);
 		String s = sc.nextLine();
 		return s;
 	}
 
-	public int getInt(String prompt) {
+	public static String getString(String prompt, boolean req) {
+		if (req) {
+			boolean isValid = false;
+			while (!isValid) {
+				System.out.print(prompt);
+				String s = sc.nextLine();
+				if (s.length() == 0) {
+					System.out.println("Error. This field is required.");
+					continue;
+				}
+				return s;
+			}
+		} else {
+			System.out.print(prompt);
+			String s = sc.nextLine();
+			return s;
+		}
+		return null;
+	}
+
+	public static int getInt(String prompt) {
 		int i = 0;
 		boolean isValid = false;
 		while (!isValid) {
@@ -28,7 +48,7 @@ public class Console {
 		return i;
 	}
 
-	public int getInt(String prompt, int min, int max) {
+	public static int getInt(String prompt, int min, int max) {
 		int i = 0;
 		boolean isValid = false;
 		while (!isValid) {
@@ -44,7 +64,7 @@ public class Console {
 		return i;
 	}
 
-	public double getDouble(String prompt) {
+	public static double getDouble(String prompt) {
 		double d = 0;
 		boolean isValid = false;
 		while (!isValid) {
@@ -60,7 +80,7 @@ public class Console {
 		return d;
 	}
 
-	public double getDouble(String prompt, double min, double max) {
+	public static double getDouble(String prompt, double min, double max) {
 		double d = 0;
 		boolean isValid = false;
 		while (!isValid) {
@@ -76,7 +96,7 @@ public class Console {
 		return d;
 	}
 
-	public String getString(String prompt, boolean ignoreCase, String ...options) {
+	public static String getString(String prompt, boolean ignoreCase, String... options) {
 		String s = "";
 		String optArr = "";
 		for (int i = 0; i < options.length; i++) {
@@ -86,6 +106,7 @@ public class Console {
 		while (!isValid) {
 			System.out.print(prompt);
 			s = sc.nextLine();
+			s = s.trim();
 			if (s.length() < 1) {
 				System.out.println("Error! This entry is required. Try again.");
 			} else {
