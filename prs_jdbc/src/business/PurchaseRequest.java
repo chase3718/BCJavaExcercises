@@ -13,9 +13,9 @@ public class PurchaseRequest {
 	private double total;
 	private LocalDate submittedDate;
 	private String reasonForRejection;
-	
+
 	public PurchaseRequest() {
-		
+
 	}
 
 	public PurchaseRequest(int userID, String description, String justification, LocalDate dateNeeded,
@@ -134,5 +134,5 @@ public class PurchaseRequest {
 				+ ", total=" + total + ", submittedDate=" + submittedDate + ", reasonForRejection=" + reasonForRejection
 				+ "]";
 	}
-	
+
 }

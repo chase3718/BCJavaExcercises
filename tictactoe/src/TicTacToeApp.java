@@ -43,7 +43,10 @@ public class TicTacToeApp {
 					}
 				}
 				playArea.drawBoard();
-				game = !playArea.checkBoard();
+				game = !playArea.checkBoard("X");
+				if (game == true) {
+					game = !playArea.checkBoard("O");
+				}
 				counter++;
 			}
 		} while (in.getStringOptions("Play Again? (y/n) ", true, "y", "n").equals("Y"));

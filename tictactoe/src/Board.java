@@ -87,20 +87,20 @@ public class Board {
 		}
 	}
 	
-	public boolean checkBoard() {
+	public boolean checkBoard(String p) {
 		boolean stop = false;
 		boolean winner = true;
 		int y1 = 0;
 		for (int x = 0; x < this.board.length; x ++) {
 			for (int y = 0; y < this.board[x].length; y++) {
 				y1 = y;
-				if (this.board[x][y].equals(" ")) {
+				if (!this.board[x][y].equals(p)) {
 					winner = false;
 					break;
 				}
 			}
 			if (winner) {
-				System.out.println(this.board[x][y1] + " wins!");
+				System.out.println(p + " wins!");
 				return true;
 			}
 			winner = true;
@@ -110,13 +110,13 @@ public class Board {
 		for (int x = 0; x < this.board[0].length; x++) {
 			for (int y = 0; y < board.length; y++) {
 				y1 = y;
-				if (this.board[y][x].equals(" ")) {
+				if (!this.board[y][x].equals(p)) {
 					winner = false;
 					break;
 				}
 			}
 			if (winner) {
-				System.out.println(this.board[x][y1] + " wins!");
+				System.out.println(p + " wins!");
 				return true;
 			}
 			winner = true;
@@ -125,16 +125,16 @@ public class Board {
 		winner = true;
 		for (int x = 0; x < this.board[0].length; x++) {
 			
-				if (this.board[x][x].equals(" ")) {
+				if (!this.board[x][x].equals(p)) {
 					winner = false;
 					break;
-				} else if (this.board[(this.board.length - x) - 1][(this.board.length - x) - 1].equals(" ")) {
+				} else if (!this.board[(this.board.length - x) - 1][(this.board.length - x) - 1].equals(p)) {
 					winner = false;
 					break;
 				}
 			
 			if (winner) {
-				System.out.println(this.board[x][x] + " wins!");
+				System.out.println(p + " wins!");
 				return true;
 			}
 			winner = true;
