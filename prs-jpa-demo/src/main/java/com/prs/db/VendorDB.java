@@ -8,48 +8,48 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
-import com.prs.business.User;
+import com.prs.business.Vendor;
 
-public class UserDB {
+public class VendorDB {
 
-	public static List<User> getAll() {
-		List<User> users = null;
+	public static List<Vendor> getAll() {
+		List<Vendor> vendors = null;
 
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
 
 		try {
-			Query q = em.createQuery("Select u from User u");
-			users = q.getResultList();
+			Query q = em.createQuery("Select v from Vendor v");
+			vendors = q.getResultList();
 		} finally {
 			em.close();
 		}
 
-		return users;
+		return vendors;
 	}
 
-	public static User get(int n) {
-		User user = null;
+	public static Vendor get(int n) {
+		Vendor vendor = null;
 
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
-		TypedQuery<User> q = em.createQuery("Select u from User u Where u.id = :n", User.class);
+		TypedQuery<Vendor> q = em.createQuery("Select v from Vendor v Where v.id = :n", Vendor.class);
 		q.setParameter("n", n);
 		try {
-			user = q.getSingleResult();
+			vendor = q.getSingleResult();
 		} catch (NoResultException e) {
 			System.err.println(e);
 		} finally {
 			em.close();
 		}
 
-		return user;
+		return vendor;
 	}
 
-	public static void insert(User user) {
+	public static void insert(Vendor vendor) {
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		trans.begin();
 		try {
-			em.persist(user);
+			em.persist(vendor);
 			trans.commit();
 		} catch (Exception e) {
 			System.err.println(e);
@@ -59,13 +59,13 @@ public class UserDB {
 		}
 	}
 
-	public static void delete(User user) {
+	public static void delete(Vendor vendor) {
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		trans.begin();
 		try {
-			em.merge(user);
-			em.remove(user);
+			em.merge(vendor);
+			em.remove(vendor);
 			trans.commit();
 		} catch (Exception e) {
 			System.err.println(e);
@@ -74,20 +74,5 @@ public class UserDB {
 			em.close();
 		}
 	}
-	
-	public static void update(User user) {
-		EntityManager em = DBUtil.getEmFactory().createEntityManager();
-		EntityTransaction trans = em.getTransaction();
-		trans.begin();
-		try {
-			em.merge(user);
-			trans.commit();
-		} catch (Exception e) {
-			System.err.println(e);
-			trans.rollback();
-		} finally {
-			em.close();
-		}
-	}
-	
+
 }

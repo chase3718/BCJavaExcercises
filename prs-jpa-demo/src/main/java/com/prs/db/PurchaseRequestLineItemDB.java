@@ -8,48 +8,48 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
-import com.prs.business.User;
+import com.prs.business.PurchaseRequestLineItem;
 
-public class UserDB {
+public class PurchaseRequestLineItemDB {
 
-	public static List<User> getAll() {
-		List<User> users = null;
+	public static List<PurchaseRequestLineItem> getAll() {
+		List<PurchaseRequestLineItem> purchaseRequestLineItems = null;
 
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
 
 		try {
-			Query q = em.createQuery("Select u from User u");
-			users = q.getResultList();
+			Query q = em.createQuery("Select p from PurchaseRequestLineItem p");
+			purchaseRequestLineItems = q.getResultList();
 		} finally {
 			em.close();
 		}
 
-		return users;
+		return purchaseRequestLineItems;
 	}
 
-	public static User get(int n) {
-		User user = null;
+	public static PurchaseRequestLineItem get(int n) {
+		PurchaseRequestLineItem purchaseRequestLineItem = null;
 
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
-		TypedQuery<User> q = em.createQuery("Select u from User u Where u.id = :n", User.class);
+		TypedQuery<PurchaseRequestLineItem> q = em.createQuery("Select p from PurchaseRequestLineItem p Where p.id = :n", PurchaseRequestLineItem.class);
 		q.setParameter("n", n);
 		try {
-			user = q.getSingleResult();
+			purchaseRequestLineItem = q.getSingleResult();
 		} catch (NoResultException e) {
 			System.err.println(e);
 		} finally {
 			em.close();
 		}
 
-		return user;
+		return purchaseRequestLineItem;
 	}
 
-	public static void insert(User user) {
+	public static void insert(PurchaseRequestLineItem purchaseRequestLineItem) {
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		trans.begin();
 		try {
-			em.persist(user);
+			em.persist(purchaseRequestLineItem);
 			trans.commit();
 		} catch (Exception e) {
 			System.err.println(e);
@@ -59,13 +59,13 @@ public class UserDB {
 		}
 	}
 
-	public static void delete(User user) {
+	public static void delete(PurchaseRequestLineItem purchaseRequestLineItem) {
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		trans.begin();
 		try {
-			em.merge(user);
-			em.remove(user);
+			em.merge(purchaseRequestLineItem);
+			em.remove(purchaseRequestLineItem);
 			trans.commit();
 		} catch (Exception e) {
 			System.err.println(e);
@@ -74,20 +74,5 @@ public class UserDB {
 			em.close();
 		}
 	}
-	
-	public static void update(User user) {
-		EntityManager em = DBUtil.getEmFactory().createEntityManager();
-		EntityTransaction trans = em.getTransaction();
-		trans.begin();
-		try {
-			em.merge(user);
-			trans.commit();
-		} catch (Exception e) {
-			System.err.println(e);
-			trans.rollback();
-		} finally {
-			em.close();
-		}
-	}
-	
+
 }

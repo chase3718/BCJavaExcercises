@@ -8,48 +8,48 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
-import com.prs.business.User;
+import com.prs.business.Product;
 
-public class UserDB {
+public class ProductDB {
 
-	public static List<User> getAll() {
-		List<User> users = null;
+	public static List<Product> getAll() {
+		List<Product> products = null;
 
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
 
 		try {
-			Query q = em.createQuery("Select u from User u");
-			users = q.getResultList();
+			Query q = em.createQuery("Select p from Product p");
+			products = q.getResultList();
 		} finally {
 			em.close();
 		}
 
-		return users;
+		return products;
 	}
 
-	public static User get(int n) {
-		User user = null;
+	public static Product get(int n) {
+		Product product = null;
 
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
-		TypedQuery<User> q = em.createQuery("Select u from User u Where u.id = :n", User.class);
+		TypedQuery<Product> q = em.createQuery("Select p from Product p Where p.id = :n", Product.class);
 		q.setParameter("n", n);
 		try {
-			user = q.getSingleResult();
+			product = q.getSingleResult();
 		} catch (NoResultException e) {
 			System.err.println(e);
 		} finally {
 			em.close();
 		}
 
-		return user;
+		return product;
 	}
 
-	public static void insert(User user) {
+	public static void insert(Product product) {
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		trans.begin();
 		try {
-			em.persist(user);
+			em.persist(product);
 			trans.commit();
 		} catch (Exception e) {
 			System.err.println(e);
@@ -59,13 +59,13 @@ public class UserDB {
 		}
 	}
 
-	public static void delete(User user) {
+	public static void delete(Product product) {
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		trans.begin();
 		try {
-			em.merge(user);
-			em.remove(user);
+			em.merge(product);
+			em.remove(product);
 			trans.commit();
 		} catch (Exception e) {
 			System.err.println(e);
@@ -74,20 +74,5 @@ public class UserDB {
 			em.close();
 		}
 	}
-	
-	public static void update(User user) {
-		EntityManager em = DBUtil.getEmFactory().createEntityManager();
-		EntityTransaction trans = em.getTransaction();
-		trans.begin();
-		try {
-			em.merge(user);
-			trans.commit();
-		} catch (Exception e) {
-			System.err.println(e);
-			trans.rollback();
-		} finally {
-			em.close();
-		}
-	}
-	
+
 }
