@@ -74,8 +74,12 @@ public class PurchaseRequestLineItem {
 
 	@Override
 	public String toString() {
-		return "PurchaseRequestLineItem [id=" + id + ", purchaseRequestid=" + purchaseRequest + ", productid="
-				+ product + ", quantity=" + quantity + "]";
+		return "=Product:    " + getProduct().getName() + "=\n" +
+		"\tQuantity:  " + getQuantity() + "\n" +
+		"\tPrice:     " + (getQuantity() * getProduct().getPrice()) + "\n" +
+		"\tUser:      " + getPurchaseRequest().getUser().getUserName() + "\n" +
+		"\tid:        " + getId() + "\n" +
+		"\n";
 	}
 
 }

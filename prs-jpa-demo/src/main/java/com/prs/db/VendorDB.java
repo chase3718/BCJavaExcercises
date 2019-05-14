@@ -8,6 +8,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import com.prs.business.User;
 import com.prs.business.Vendor;
 
 public class VendorDB {
@@ -66,6 +67,21 @@ public class VendorDB {
 		try {
 			em.merge(vendor);
 			em.remove(vendor);
+			trans.commit();
+		} catch (Exception e) {
+			System.err.println(e);
+			trans.rollback();
+		} finally {
+			em.close();
+		}
+	}
+	
+	public static void update(Vendor vendor) {
+		EntityManager em = DBUtil.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		trans.begin();
+		try {
+			em.merge(vendor);
 			trans.commit();
 		} catch (Exception e) {
 			System.err.println(e);

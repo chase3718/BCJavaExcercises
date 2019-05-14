@@ -346,7 +346,7 @@ public class prsApp {
 			sb.append("\tPart Number: " + p.getPartNumber() + "\n");
 			sb.append("\tUnit:        " + p.getUnit() + "\n");
 			sb.append("\tPrice:       " + p.getPriceFormatted() + "\n");
-			//Vendor v = vendorDB.get(p.getVendorID());
+			Vendor v = vendorDB.get(p.getVendorID());
 			sb.append("\tVendor:      " + v.getName() + "\n");
 			sb.append("\n");
 		}

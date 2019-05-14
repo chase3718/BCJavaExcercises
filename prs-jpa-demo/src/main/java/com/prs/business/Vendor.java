@@ -137,9 +137,15 @@ public class Vendor {
 
 	@Override
 	public String toString() {
-		return "Vendor [id=" + id + ", code=" + code + ", name=" + name + ", address=" + address + ", city=" + city
-				+ ", state=" + state + ", zip=" + zip + ", phoneNumber=" + phoneNumber + ", email=" + email
-				+ ", isPreApproved=" + isPreApproved + "]";
+		return "=Name: " + getName() + "=\n"+
+		"\tid:            " + getId() + "\n"+
+		"\tVendor Code:   " + getCode() + "\n"+
+		"\tAddress:       " + getAddress() + ", " + getCity() + " " + getState() + " "
+				+ getZip() + "\n"+
+		"\tPhone Number:  " + getPhoneNumber() + "\n"+
+		"\tEmail:         " + getEmail() + "\n"+
+		"\tPreApproved:   " + isPreApproved() + "\n"+
+		"\n";
 	}
     
     

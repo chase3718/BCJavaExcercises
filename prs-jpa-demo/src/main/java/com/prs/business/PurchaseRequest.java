@@ -1,6 +1,8 @@
 package com.prs.business;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -142,10 +144,14 @@ public class PurchaseRequest {
 
 	@Override
 	public String toString() {
-		return "PurchaseRequest [id=" + id + ", userid=" + user + ", description=" + description + ", justification="
-				+ justification + ", dateNeeded=" + dateNeeded + ", deliveryMode=" + deliveryMode + ", status=" + status
-				+ ", total=" + total + ", submittedDate=" + submittedDate + ", reasonForRejection=" + reasonForRejection
-				+ "]";
+		DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
+		return "=User: " + getUser().getUserName() + "=\n" +
+		"\tid:            " + getId() + "\n" +
+		"\tDescription:   " + getDescription() + "\n" +
+		"\tJustification: " + getJustification() + "\n" +
+		"\tDate Needed:   " + dtf.format(getDateNeeded()) + "\n" +
+		"\tDelivery Mode: " + getDeliveryMode() + "\n" +
+		"\tStatus:        " + getStatus() + "\n";
 	}
 
 }

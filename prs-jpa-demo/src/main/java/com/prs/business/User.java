@@ -133,9 +133,15 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", Password=" + Password + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", phoneNumber=" + phoneNumber + ", email=" + email + ", isReviewer="
-				+ isReviewer + ", isAdmin=" + isAdmin + "]";
+		return "=Name: " + getFirstName() + " " + getLastName() + "=\n" +
+		"\tUser ID:       " + getId() + "\n" +
+		"\tUsername:      " + getUserName() + "\n" +
+		"\tPassword:      " + getPasswordStars() + "\n" +
+		"\tPhone Number:  " + getPhoneNumber() + "\n" +
+		"\tEmail:         " + getEmail() + "\n" +
+		"\tIs a Reviewer: " + isReviewer() + "\n" +
+		"\tIs an Admin:   " + isAdmin() + "\n" +
+		"\n";
 	}
 
 }

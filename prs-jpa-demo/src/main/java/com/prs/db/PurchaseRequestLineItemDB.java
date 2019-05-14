@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import com.prs.business.PurchaseRequestLineItem;
+import com.prs.business.User;
 
 public class PurchaseRequestLineItemDB {
 
@@ -66,6 +67,21 @@ public class PurchaseRequestLineItemDB {
 		try {
 			em.merge(purchaseRequestLineItem);
 			em.remove(purchaseRequestLineItem);
+			trans.commit();
+		} catch (Exception e) {
+			System.err.println(e);
+			trans.rollback();
+		} finally {
+			em.close();
+		}
+	}
+	
+	public static void update(PurchaseRequestLineItem prl) {
+		EntityManager em = DBUtil.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		trans.begin();
+		try {
+			em.merge(prl);
 			trans.commit();
 		} catch (Exception e) {
 			System.err.println(e);

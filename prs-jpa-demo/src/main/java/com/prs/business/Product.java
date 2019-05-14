@@ -113,8 +113,13 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [ID=" + id + ", vendorID=" + vendor + ", partNumber=" + partNumber + ", name=" + name
-				+ ", price=" + price + ", unit=" + unit + ", photoPath=" + photoPath + "]";
+		return "\t=Part Name:   " + getName() + "=\n" +
+		"\tid:            " + getId() + "\n" +
+		"\tPart Number: " + getPartNumber() + "\n" +
+		"\tUnit:        " + getUnit() + "\n" +
+		"\tPrice:       " + getPriceFormatted() + "\n" +
+		"\tVendor:      " + getVendor().getName() + "\n" +
+		"\n";
 	}
   
 }

@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import com.prs.business.Product;
+import com.prs.business.User;
 
 public class ProductDB {
 
@@ -66,6 +67,21 @@ public class ProductDB {
 		try {
 			em.merge(product);
 			em.remove(product);
+			trans.commit();
+		} catch (Exception e) {
+			System.err.println(e);
+			trans.rollback();
+		} finally {
+			em.close();
+		}
+	}
+	
+	public static void update(Product product) {
+		EntityManager em = DBUtil.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		trans.begin();
+		try {
+			em.merge(product);
 			trans.commit();
 		} catch (Exception e) {
 			System.err.println(e);
