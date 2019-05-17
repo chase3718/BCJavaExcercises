@@ -94,17 +94,6 @@ public class PrsJpaDemoApplication {
 		System.out.println("Bye");
 	}
 
-	public static void displayLineItems() {
-		System.out.println("Purchase Request Line Items");
-		System.out.println("==========================================");
-		List<PurchaseRequestLineItem> prli = PurchaseRequestLineItemDB.getAll();
-		StringBuilder sb = new StringBuilder();
-		for (PurchaseRequestLineItem p : prli) {
-			sb.append(p);
-		}
-		System.out.println(sb.toString());
-	}
-
 	private static Vendor selectFromVendors(int id) {
 		return VendorDB.get(id);
 	}
@@ -428,7 +417,7 @@ public class PrsJpaDemoApplication {
 			ProductDB.insert(p);
 		}
 	}
-
+	//heh
 	private static void addToTable(String table) {
 		if (table.equalsIgnoreCase("users")) {
 			String userName = Console.getString("Username:     ", true);
@@ -509,6 +498,17 @@ public class PrsJpaDemoApplication {
 		System.out.println(sb.toString());
 	}
 
+	private static void displayLineItems() {
+		System.out.println("Purchase Request Line Items");
+		System.out.println("==========================================");
+		List<PurchaseRequestLineItem> prli = PurchaseRequestLineItemDB.getAll();
+		StringBuilder sb = new StringBuilder();
+		for (PurchaseRequestLineItem p : prli) {
+			sb.append(p);
+		}
+		System.out.println(sb.toString());
+	}
+	
 	private static void displayUsers() {
 		System.out.println("Users");
 		System.out.println("==========================================");

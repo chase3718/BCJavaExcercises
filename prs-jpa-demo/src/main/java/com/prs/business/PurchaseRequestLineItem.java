@@ -2,6 +2,9 @@ package com.prs.business;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import java.text.NumberFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -74,9 +77,10 @@ public class PurchaseRequestLineItem {
 
 	@Override
 	public String toString() {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		return "=Product:    " + getProduct().getName() + "=\n" +
 		"\tQuantity:  " + getQuantity() + "\n" +
-		"\tPrice:     " + (getQuantity() * getProduct().getPrice()) + "\n" +
+		"\tPrice:     " + formatter.format(getQuantity() * getProduct().getPrice()) + "\n" +
 		"\tUser:      " + getPurchaseRequest().getUser().getUserName() + "\n" +
 		"\tid:        " + getId() + "\n" +
 		"\n";
