@@ -417,7 +417,7 @@ public class PrsJpaDemoApplication {
 			ProductDB.insert(p);
 		}
 	}
-	//heh
+	
 	private static void addToTable(String table) {
 		if (table.equalsIgnoreCase("users")) {
 			String userName = Console.getString("Username:     ", true);
