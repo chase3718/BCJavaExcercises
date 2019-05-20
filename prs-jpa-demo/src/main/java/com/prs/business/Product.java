@@ -119,6 +119,7 @@ public class Product {
 		"\tUnit:        " + getUnit() + "\n" +
 		"\tPrice:       " + getPriceFormatted() + "\n" +
 		"\tVendor:      " + getVendor().getName() + "\n" +
+		"\tPhotoPath:   " + getPhotoPath() + "\n" +
 		"\n";
 	}
   

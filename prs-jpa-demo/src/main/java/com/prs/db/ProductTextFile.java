@@ -35,33 +35,35 @@ public class ProductTextFile {
 			try (BufferedReader in = new BufferedReader(new FileReader(productsFile))) {
 				String line = in.readLine();
 				while (line != null) {
-					String[] fields = line.split(FIELD_SEP);
-					//int vendorID = Integer.parseInt(fields[1]);
-					String partNumber = fields[0];
+					List<String> fields = new ArrayList<>(5);
+					String[] s = line.split(FIELD_SEP);
+					for (int i = 0; i < s.length; i++) {
+						fields.add(s[i]);
+					}
+					if (fields.size() < 5) {
+						fields.add(null);
+						fields.add(null);
+					}
+					String partNumber = fields.get(0);
 					partNumber.trim();
-					String name = fields[1];
+					String name = fields.get(1);
 					name.trim();
-					double price = Double.parseDouble(fields[2]);
-					String unit;
-					if (fields[3] != null) {
-						unit = fields[3];
-					} else {
-						unit = null;
+					double price = Double.parseDouble(fields.get(2));
+					String unit = fields.get(3);
+					if (unit != null) {
+						unit.trim();
+						if (unit.equals("")) {
+							unit = null;
+						}
 					}
-					unit.trim();
-					if (unit.equals("")) {
-						unit = null;
+					String photoPath = fields.get(4);
+					if (photoPath != null) {
+						photoPath.trim();
+						if (photoPath.equals("")) {
+							photoPath = null;
+						}
 					}
-					String photoPath;
-					if (fields[4] != null) {
-						photoPath = fields[4];
-					} else {
-						photoPath = null;
-						
-					}
-					photoPath.trim();
 					Product p = new Product(v, partNumber, name, price, unit, photoPath);
-					//Vendor vendorID, String partNumber, String name, double price, String unit, String photoPath
 					products.add(p);
 
 					line = in.readLine();

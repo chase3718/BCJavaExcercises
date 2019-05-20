@@ -604,7 +604,7 @@ public class PrsJpaDemoApplication {
 	private static void displayMenu() {
 		System.out.println("Command Menu");
 		System.out.println("===============================");
-		System.out.println("list	- List a table of your choice");
+		System.out.println("list    - List a table of your choice");
 		System.out.println("sel     - Select from a table");
 		System.out.println("add     - Add to a table");
 		System.out.println("del     - Delete from a table");
